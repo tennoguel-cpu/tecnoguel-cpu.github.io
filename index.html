@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoGuel - Centro Técnico Futurista</title>
+    <style>
+        /* Estilo futurista: Gradientes, neón, fuentes sans-serif modernas */
+        body {
+            font-family: 'Orbitron', sans-serif; /* Fuente futurista, puedes descargarla de Google Fonts */
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #00ffcc;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #00ffcc; }
+            to { box-shadow: 0 0 20px #00ffcc; }
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #00ffcc;
+            text-shadow: 0 0 5px #00ffcc;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        a {
+            color: #00ffcc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff00cc;
+            text-shadow: 0 0 5px #ff00cc;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #24243e;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #00ffcc;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ffcc;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            background: linear-gradient(to right, #00ffcc, #ff00cc);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 2px solid #00ffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TecnoGuel - Centro Técnico Futurista</h1>
+        <p>Tu solución técnica en el futuro presente</p>
+    </header>
+
+    <section id="precios">
+        <h2>📋 Lista de precios populares – TecnoGuel (en córdobas C$)</h2>
+        <h3>🔧 Servicios técnicos:</h3>
+        <ul>
+            <li>Actualización de software o drivers: <strong>C$100</strong></li>
+            <li>Reinicio de fábrica (con respaldo): <strong>C$80</strong></li>
+            <li>Limpieza y aceleración del sistema: <strong>C$70</strong></li>
+            <li>Instalación de apps básicas configuradas: <strong>C$50</strong></li>
+            <li>Eliminación de virus o errores: <strong>C$70</strong></li>
+        </ul>
+        <h3>🎨 Personalización del teléfono:</h3>
+        <ul>
+            <li>Cambio de temas y fondos: <strong>C$50</strong></li>
+            <li>Personalización completa (tema + apps + sonidos): <strong>C$100</strong></li>
+        </ul>
+        <h3>🔍 Revisión técnica:</h3>
+        <p><strong>GRATIS</strong></p>
+        <h3>🛠️ Paquete completo (revisión + limpieza + personalización + actualización):</h3>
+        <p><strong>C$180</strong></p>
+        <hr>
+        <h3>🎁 Promociones por apertura</h3>
+        <p>👨‍🔧 Servicio profesional con precios justos para todos</p>
+    </section>
+
+    <section id="descargas">
+        <h2>📥 Link de descarga de Actualizador de drivers</h2>
+        <p>Aquí puedes descargar archivos útiles para tu dispositivo. Estos enlaces son para uso local en nuestro servidor.</p>
+        <ul>
+            <li><a href="https://driver-booster-free.es.download.it/downloading" target="_blank">Actualizador de drivers</a></li>
+        </ul>
+    </section>
+
+    <section id="acceso">
+        <h2>📄 Información y Repositorio</h2>
+        <p>Consulta un resumen de nuestros servicios populares y enlaces directos a nuestro repositorio de descargas.</p>
+        <button onclick="window.location.href='Bypass.html'">Bypass</button>
+        <button onclick="window.location.href='diagnostico-rapido.html'">Ver Diagnóstico Rapido</button>
+        <button onclick="window.location.href='info-adicional.html'">Ver Información Adicional</button>
+        <<button onclick="window.location.href='tecnoguel-ia-android.html'">Hacer preguntas a IA</button> 
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TecnoGuel. Todos los derechos reservados. Servidor local solo.</p>
+    </footer>
+
+</body>
+</html>

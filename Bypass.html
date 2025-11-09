@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repositorios de Apps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f4f7fa;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .repo-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .repo-item {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s;
+    }
+
+    .repo-item:hover {
+      background: #f8f9ff;
+    }
+
+    .repo-item:last-child {
+      border-bottom: none;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #555;
+    }
+
+    .repo-info {
+      flex: 1;
+    }
+
+    .repo-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .repo-desc {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 2px;
+    }
+
+    .open-btn {
+      background: #4e54c8;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .open-btn:hover {
+      background: #3a3f9e;
+    }
+
+    @media (max-width: 600px) {
+      .repo-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px 15px;
+      }
+      .icon {
+        margin-bottom: 10px;
+      }
+      .open-btn {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bypass</h1>
+      <p>TecnoGuel</p>
+    </header>
+
+    <ul class="repo-list">
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-store"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Galaxy Store</div>
+          <div class="repo-desc">Tienda oficial de Samsung</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.sec.android.app.samsungapps/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fab fa-google"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Google Quick Search Box</div>
+          <div class="repo-desc">Búsqueda rápida de Google</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.google.android.googlequicksearchbox/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-cog"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Setting</div>
+          <div class="repo-desc">Configuración del dispositivo</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.android.settings/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-qrcode"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Qr Scan Activity</div>
+          <div class="repo-desc">Escáner de códigos QR</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.android.settings/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-tasks"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Activity Manager</div>
+          <div class="repo-desc">Gestor de actividades del sistema</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.activitymanager/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Screen Smartlock</div>
+          <div class="repo-desc">Bloqueo inteligente de pantalla</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.google.android.gms/#Intent;scheme=promote_smartlock_scheme;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-folder-open"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Samsung My Files</div>
+          <div class="repo-desc">Administrador de archivos Samsung</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.sec.android.app.myfiles/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fab fa-youtube"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Youtube</div>
+          <div class="repo-desc">Reproductor de videos de YouTube</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.google.android.youtube/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fab fa-chrome"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Chrome</div>
+          <div class="repo-desc">Navegador Google Chrome</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.android.chrome/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-globe"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Samsung Internet</div>
+          <div class="repo-desc">Navegador web de Samsung</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('https://apps.samsung.com/appquery/appDetail.as?appId=com.sec.android.app.sbrowser&cld-000005006635', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-calculator"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Calculator</div>
+          <div class="repo-desc">Calculadora del sistema</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.sec.android.app.popupcalculator/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-shield"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Alliance Shield</div>
+          <div class="repo-desc">Herramienta de gestión avanzada</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.rrivenllc.shieldx/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-tools"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Android Hidden Settings</div>
+          <div class="repo-desc">Ajustes ocultos del sistema</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('https://galaxy.store/setting', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-user-circle"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Login Account</div>
+          <div class="repo-desc">Inicio de sesión de cuenta</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-user-circle"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">Home launcher</div>
+          <div class="repo-desc">Inicio de sesión de cuenta</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('intent://com.sec.android.app.launcher/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+
+      <li class="repo-list">
+        <div class="icon"><i class="fas fa-phone"></i></div>
+        <div class="repo-info">
+          <div class="repo-name">*#0*# (Enable adb Tecno/Infinix)</div>
+          <div class="repo-desc">Código de diagnóstico ADB</div>
+        </div>
+        <button type="button" class="open-btn" onclick="window.open('tel:100-000-000/#Intent;scheme=android-app;end', '_blank')">Open</button>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,133 @@
+/*
+ * TECNOGUEL CORE | ARCHIVO DE ESTILO MAESTRO (STYLE.CSS)
+ * Propósito: Unificar la estética Cyber-Tecnológica en todos los módulos (index, info, personalización, etc.).
+ */
+
+/* --- VARIABLES DE COLOR NEÓN Y FUENTES --- */
+:root {
+    /* Fondo y Colores Base */
+    --color-fondo-primario: #0f0c29; /* Púrpura/Azul oscuro */
+    --color-fondo-secundario: #302b63; /* Azul medio oscuro */
+    --color-fondo-terciario: #24243e; /* Morado oscuro */
+    --color-texto-base: #e0f7fa; /* Blanco azulado claro */
+
+    /* Colores Neón (Énfasis y Branding) */
+    --color-neon-cian: #00ffcc; /* Cian Brillante (Primario) */
+    --color-neon-magenta: #ff00cc; /* Magenta Brillante (Secundario) */
+    --sombra-cian: 0 0 10px var(--color-neon-cian), 0 0 20px rgba(0, 255, 204, 0.4);
+    --sombra-magenta: 0 0 10px var(--color-neon-magenta), 0 0 20px rgba(255, 0, 204, 0.4);
+
+    /* Estructura y Componentes */
+    --borde-futurista: 2px solid var(--color-neon-cian);
+    --fondo-opaco: rgba(255, 255, 255, 0.08); /* Fondo de secciones semi-transparente */
+}
+
+/* --- ESTILOS GENERALES Y FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to bottom, var(--color-fondo-primario), var(--color-fondo-secundario), var(--color-fondo-terciario));
+    color: var(--color-texto-base);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- ESTRUCTURA Y CABECERA --- */
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--color-neon-cian);
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: var(--sombra-cian);
+    margin: 0;
+}
+
+h2 {
+    color: var(--color-neon-magenta);
+    text-shadow: 0 0 5px rgba(255, 0, 204, 0.6);
+    border-bottom: 1px dashed var(--color-neon-magenta);
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* --- SECCIONES Y CONTENEDORES --- */
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--fondo-opaco);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    border-left: 5px solid var(--color-neon-cian);
+}
+
+/* --- LISTAS Y ENLACES --- */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 3px solid var(--color-neon-magenta);
+}
+
+a {
+    color: var(--color-neon-cian);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: var(--color-neon-magenta);
+    text-shadow: var(--sombra-magenta);
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+button, .button-container a {
+    background: linear-gradient(to right, var(--color-neon-cian), var(--color-neon-magenta));
+    border: none;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block; /* Importante para que los <a> se vean como botones */
+}
+
+button:hover, .button-container a:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.7);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid var(--color-neon-magenta);
+    margin-top: 40px;
+    font-size: 0.8em;
+}
+
+/* ==================================== */
+/* === APLICACIÓN DE ESTILO MAESTRO === */
+/* ==================================== */
+
+/* Actualizar la cabecera de todos los archivos para usar el CSS externo */
+/* En cada archivo HTML, busca la etiqueta <style> y reemplázala con: */
+/* <link rel="stylesheet" href="style.css"> */

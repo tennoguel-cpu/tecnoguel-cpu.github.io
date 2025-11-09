@@ -1,0 +1,192 @@
+/*
+ * TecnoGuel CORE CSS | Hoja de Estilos Futurista
+ * Propósito: Centralizar estilos para consistencia, eficiencia y mantenimiento.
+ * Versión: 1.0.0
+ */
+
+/* ========================================================================= */
+/* 1. VARIABLES GLOBALES (PALETA DE COLOR)                                   */
+/* ========================================================================= */
+:root {
+    /* Fondos */
+    --color-fondo-primario: #0f0c29;
+    --color-fondo-secundario: #302b63;
+    --color-fondo-terciario: #24243e;
+    --color-fondo-opaco: rgba(0, 0, 0, 0.5);
+
+    /* Neón / Resaltado */
+    --color-neon-cian: #00ffcc;
+    --color-neon-magenta: #ff00cc;
+
+    /* Textos */
+    --color-texto-base: #ffffff;
+    --color-texto-sombra-cian: 0 0 10px var(--color-neon-cian);
+    --color-texto-sombra-magenta: 0 0 5px rgba(255, 0, 204, 0.5);
+
+    /* Estilos de Componentes */
+    --sombra-componente: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Importar la fuente principal */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Animación de brillo para el header principal */
+@keyframes glow {
+    from { box-shadow: 0 0 10px var(--color-neon-cian); }
+    to { box-shadow: 0 0 20px var(--color-neon-cian); }
+}
+
+/* ========================================================================= */
+/* 2. ESTILOS BASE Y TIPOGRAFÍA                                              */
+/* ========================================================================= */
+body {
+    font-family: 'Orbitron', sans-serif;
+    /* Fondo con degradado profundo */
+    background: linear-gradient(to bottom, var(--color-fondo-primario), var(--color-fondo-secundario), var(--color-fondo-terciario));
+    color: var(--color-texto-base);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Encabezado global */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--color-fondo-opaco);
+    border-bottom: 2px solid var(--color-neon-cian);
+    /* box-shadow: 0 0 10px var(--color-neon-cian); <- Esta es solo la base, la animación lo maneja en index.html */
+}
+
+/* Estilo ÚNICO para el HEADER de la página principal (index.html) */
+body.home-page header {
+    animation: glow 2s infinite alternate;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: var(--color-texto-sombra-cian);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: var(--color-neon-magenta);
+    text-shadow: var(--color-texto-sombra-magenta);
+    border-bottom: 1px dashed rgba(255, 0, 204, 0.5);
+    padding-bottom: 5px;
+}
+
+/* Contenedores de contenido (Sections) */
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05); /* Ligeramente transparente */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2); /* Sombra Neón Cian */
+    border: 1px solid rgba(0, 255, 204, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 30px rgba(0, 255, 204, 0.4);
+}
+
+/* ========================================================================= */
+/* 3. ESTILOS DE INTERACCIÓN (BOTONES Y ENLACES)                             */
+/* ========================================================================= */
+
+/* Botones principales */
+button {
+    background: linear-gradient(to right, var(--color-neon-cian), var(--color-neon-magenta));
+    border: none;
+    color: var(--color-texto-base);
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px; /* Bordes redondeados futuristas */
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px var(--color-neon-cian);
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 0 20px var(--color-neon-magenta);
+}
+
+/* Enlaces de lista */
+a {
+    color: var(--color-neon-cian);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-neon-magenta);
+    text-decoration: underline;
+    text-shadow: 0 0 5px var(--color-neon-magenta);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 3px solid var(--color-neon-cian);
+    border-radius: 3px;
+}
+
+/* Footer (Pie de página) */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background: var(--color-fondo-opaco);
+    border-top: 1px solid rgba(0, 255, 204, 0.2);
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Estilos específicos para contenedores de botones */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA MÓDULO DE CHAT (tecnoguel-ia-android.html) --- */
+/* Sobrescribe los estilos base para centrar el chatbox */
+body.chat-module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #07071f, #151540, #07071f); /* Fondo más oscuro para el chat */
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 800px;
+    min-height: 70vh;
+    background: rgba(1, 23, 40, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    border: 1px solid var(--color-neon-cian);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* El resto de los estilos únicos de IA (mensaje, input, etc.) se mantienen en el HTML para evitar sobrecarga en index.css */

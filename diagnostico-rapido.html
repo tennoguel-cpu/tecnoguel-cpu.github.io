@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Diagnóstico Rápido - TecnoGuel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos del diagnóstico */
+        #diagnosis-container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 40px;
+            border: var(--borde-futurista);
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .question {
+            font-size: 1.5em;
+            color: var(--color-neon-cian);
+            margin-bottom: 25px;
+        }
+
+        .option-button {
+            display: block;
+            margin: 15px auto;
+            width: 80%;
+            background: var(--color-fondo-secundario);
+            color: var(--color-texto-base);
+            border: 1px solid var(--color-neon-magenta);
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .option-button:hover {
+            background: rgba(255, 0, 204, 0.3);
+            border-color: var(--color-neon-magenta);
+            box-shadow: 0 0 10px var(--color-neon-magenta);
+        }
+
+        .result-box {
+            border: 2px solid var(--color-neon-cian);
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 255, 204, 0.1);
+            margin-top: 30px;
+        }
+
+        .result-box h3 {
+            color: var(--color-neon-cian);
+            text-shadow: var(--sombra-cian);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔬 Diagnóstico Rápido de Fallos</h1>
+        <p>Responde las preguntas para identificar la solución más probable.</p>
+    </header>
+
+    <div id="diagnosis-container">
+        <div id="quiz-area">
+            </div>
+        <div id="result-area" class="result-box" style="display: none;">
+            </div>
+    </div>
+
+    <section id="volver">
+        <button onclick="window.location.href='index.html'">Volver a la Página Principal</button>
+    </section>
+
+    <script>
+        // --- ÁRBOL DE DECISIONES DE DIAGNÓSTICO ---
+        const questions = {
+            Q1: {
+                text: "¿Cuál es la categoría principal del fallo?",
+                options: [
+                    { text: "Lentitud / Rendimiento / Batería", next: "Q2_PERF" },
+                    { text: "Conectividad (Wi-Fi/Bluetooth/Red)", next: "Q2_CONN" },
+                    { text: "El teléfono no enciende / Pantalla negra", next: "Q2_POWER" }
+                ]
+            },
+            
+            // --- RAMA RENDIMIENTO (Q2_PERF) ---
+            Q2_PERF: {
+                text: "¿El problema es constante o solo con ciertas aplicaciones?",
+                options: [
+                    { text: "Constante, desde que lo enciendo.", next: "R1_REINICIO" },
+                    { text: "Solo con apps pesadas (juegos, redes sociales).", next: "R2_CACHE" }
+                ]
+            },
+            
+            // --- RAMA CONECTIVIDAD (Q2_CONN) ---
+            Q2_CONN: {
+                text: "¿El fallo afecta a Wi-Fi, Bluetooth o ambos?",
+                options: [
+                    { text: "Solo Wi-Fi (no se conecta o se desconecta).", next: "R3_WIFI" },
+                    { text: "Solo Bluetooth (auriculares, parlantes).", next: "R4_BLUETOOTH" },
+                    { text: "Ambos fallan (o fallan los datos móviles).", next: "R5_RED_RESET" }
+                ]
+            },
+
+            // --- RAMA POWER (Q2_POWER) ---
+            Q2_POWER: {
+                text: "¿El teléfono vibra o emite algún sonido, o está totalmente muerto?",
+                options: [
+                    { text: "Vibra, se ilumina un poco, o se reinicia en bucle.", next: "R6_SOFT_BRICK" },
+                    { text: "Totalmente muerto, ni carga ni vibra.", next: "R7_HARDWARE" }
+                ]
+            },
+
+            // --- RESULTADOS (R1 a R7) ---
+            R1_REINICIO: {
+                result: "Máximo Rendimiento",
+                tip: "La solución más probable es un **Restablecimiento de Fábrica Profesional** (con respaldo de datos). Esto eliminará el software corrupto que satura el CPU. Ofrecemos este servicio por C$180 (Paquete Completo)."
+            },
+            R2_CACHE: {
+                result: "Limpieza de Software",
+                tip: "Necesitas una limpieza profunda de caché y datos de apps. Solución: Ir a Ajustes > Aplicaciones y **Borrar Caché** de las apps problemáticas. Si persiste, contrata nuestro servicio de **Limpieza de Software** (C$50)."
+            },
+            R3_WIFI: {
+                result: "Fallos de Conexión Wi-Fi",
+                tip: "Intenta primero un **Restablecimiento de Ajustes de Red** (Ajustes > Administración general > Restablecer). Esto fuerza una reconexión limpia. Si el fallo continúa, puede ser un problema de hardware de la antena Wi-Fi."
+            },
+            R4_BLUETOOTH: {
+                result: "Fallos de Conexión Bluetooth",
+                tip: "Asegúrate de que el otro dispositivo no esté ya emparejado con otro móvil. Si no, realiza el **Restablecimiento de Ajustes de Red** (Ajustes > Administración general > Restablecer)."
+            },
+            R5_RED_RESET: {
+                result: "Conflicto Global de Redes",
+                tip: "La solución casi segura es el **Restablecimiento Completo de Ajustes de Red**. Esta acción restablece Wi-Fi, Bluetooth y Datos Móviles a sus valores predeterminados. Si esto no funciona, es un fallo de módem (Hardware/Firmware)."
+            },
+            R6_SOFT_BRICK: {
+                result: "Soft Brick / Bucle de Arranque",
+                tip: "El sistema de arranque está dañado. Solución: **Reinicio Forzado** (Volumen Abajo + Encendido por 10s). Si esto no lo arregla, se necesita un **Flasheo de Firmware** con Modo Download. **⚠️ ALTO RIESGO. Contáctanos de inmediato para un flasheo seguro.**"
+            },
+            R7_HARDWARE: {
+                result: "Fallo de Hardware Crítico",
+                tip: "Si el teléfono no da ninguna señal de vida, es probable que la batería, la placa base o el puerto de carga estén dañados. Esto requiere una **Revisión Física en Taller**. ¡Contáctanos para iniciar un diagnóstico!"
+            }
+        };
+
+        let currentQuestionKey = 'Q1';
+        const quizArea = document.getElementById('quiz-area');
+        const resultArea = document.getElementById('result-area');
+
+        function loadQuestion(key) {
+            currentQuestionKey = key;
+            quizArea.innerHTML = '';
+            resultArea.style.display = 'none';
+
+            const data = questions[key];
+
+            if (data.result) {
+                // Es un resultado, no una pregunta
+                displayResult(data);
+                return;
+            }
+
+            // Es una pregunta
+            const questionElement = document.createElement('div');
+            questionElement.className = 'question';
+            questionElement.textContent = data.text;
+            quizArea.appendChild(questionElement);
+
+            data.options.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'option-button';
+                button.textContent = option.text;
+                button.onclick = () => loadQuestion(option.next);
+                quizArea.appendChild(button);
+            });
+        }
+
+        function displayResult(data) {
+            quizArea.style.display = 'none';
+            resultArea.style.display = 'block';
+
+            resultArea.innerHTML = `
+                <h3>✅ Diagnóstico Finalizado: ${data.result}</h3>
+                <p>${data.tip}</p>
+                <div style="margin-top: 20px;">
+                    <button onclick="loadQuestion('Q1')" class="option-button" style="width: 200px;">Iniciar de Nuevo</button>
+                    <button onclick="window.location.href='tecnoguel-ia-android.html'" class="option-button" style="width: 200px; background: #0d47a1;">Consultar a la IA</button>
+                </div>
+            `;
+        }
+
+        // Inicializar el diagnóstico al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            loadQuestion(currentQuestionKey);
+        });
+    </script>
+</body>
+</html>
